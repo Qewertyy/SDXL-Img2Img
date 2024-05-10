@@ -53,7 +53,7 @@ async function generateImage(prompt: string, image: Buffer) {
     ).catch((err) => err);
     if (response instanceof AxiosError) {
         console.log(response.response?.status, response.response?.data);
-        return "an error occured while generating the image."
+        return "an error occurred while generating the image."
     };
     await fs.writeFile(`./public/generatedImage_${Date.now()}.jpg`, response.data, (err) => {
         if (err) {
